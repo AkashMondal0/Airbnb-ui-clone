@@ -3,6 +3,7 @@ import Container from '../container/Container'
 import Logo from './Logo'
 import Search from './Search'
 import UserMenu from './UserMenu'
+import Categories from './Categories'
 const Navbar = () => {
     return (
         <div className='fixed w-full bg-white z-10 shadow-sm 
@@ -20,6 +21,8 @@ const Navbar = () => {
                     </div>
                 </Container>
             </div>
+            <hr/>
+            <Categories/>
         </div>
     )
 }
