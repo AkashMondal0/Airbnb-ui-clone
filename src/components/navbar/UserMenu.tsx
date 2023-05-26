@@ -5,16 +5,27 @@ import Avatar from '../Avatar'
 import MenuItem from './MenuItem'
 import useRegisterModal from '@/hooks/useRegisterModal'
 import useLoginModal from '@/hooks/useLoginModal'
-
-const UserMenu = () => {
+import useUserRentModal from '@/hooks/useRentModal'
+interface UserMenuProps {
+    currentUser: any
+}
+const UserMenu = ({ currentUser }: UserMenuProps) => {
     const registerModal = useRegisterModal()
     const loginModal = useLoginModal()
+    const userRentModal = useUserRentModal()
     const [isOpen, setIsOpen] = React.useState(false)
     const toggle = useCallback(() => setIsOpen((isOpen) => !isOpen), [])
+
+    const onRent = useCallback(() => {
+        if (!currentUser) {
+            return loginModal.open()
+        }
+    }, [currentUser, loginModal])
+
     return (
         <div className='relative'>
             <div className=' flex flex-row items-center gap-3'>
-                <div onClick={() => { }}
+                <div onClick={userRentModal.open}
                     className='
             hidden
             md:block
@@ -66,6 +77,7 @@ const UserMenu = () => {
             '>
                     <div className='flex flex-col cursor-pointer'>
                         <>
+                        <MenuItem label='Airbnb your home' onClick={userRentModal.open} />
                             <MenuItem label='Sign In' onClick={loginModal.open} />
                             <MenuItem label='Sign Up' onClick={registerModal.open} />
                         </>

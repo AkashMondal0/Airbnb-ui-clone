@@ -87,11 +87,11 @@ const Modal = ({
       md:w-4/6 
       lg:w-3/6 
       xl:w-2/5 
-      my-6 
-      mx-auto 
-      lg:h-auto 
-      md:h-auto 
-      h-full'>
+      my-6
+      lg:h-auto
+      md:h-auto
+      mx-10
+      '>
         {/*content*/}
         <div className={`
         translate

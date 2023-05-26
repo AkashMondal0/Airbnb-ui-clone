@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { AiFillGithub } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
@@ -10,9 +10,11 @@ import Input from '../inputs/input'
 import { toast } from 'react-hot-toast'
 import Button from '../Button'
 import useLoginModal from '@/hooks/useLoginModal'
+import useRegisterModal from '@/hooks/useRegisterModal'
 
 const LoginModal = () => {
     const loinModal = useLoginModal()
+    const registerModal = useRegisterModal()
     const [isLoading, setIsLoading] = useState(false)
 
     const {
@@ -43,6 +45,11 @@ const LoginModal = () => {
             })
 
     }
+
+    const toggleModal = useCallback(() => {
+        loinModal.close()
+        registerModal.open()
+    }, [registerModal, loinModal])
 
     const bodyContent = (
         <div className='flex flex-col gap-4'>
@@ -76,7 +83,8 @@ const LoginModal = () => {
             icon={AiFillGithub}
             onClick={() => { }} />
         <div className='text-neutral-500 text-center font-light flex justify-center'>
-            Already have an account?{' '}<div className='px-2 cursor-pointer hover:underline'>Log in</div>
+            Don't have an account?{' '}<div className='px-2 cursor-pointer hover:underline'
+                onClick={toggleModal}>Sign Up</div>
         </div>
 
     </div>)
