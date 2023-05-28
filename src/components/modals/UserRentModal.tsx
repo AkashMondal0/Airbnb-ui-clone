@@ -5,9 +5,12 @@ import useUserRentModal from '@/hooks/useRentModal'
 import Heading from '../Heading'
 import { categories } from '../navbar/Categories'
 import CategoryInput from '../inputs/CategoryInput'
-import { FieldValues, useForm } from 'react-hook-form'
-import CountrySelection, { CountrySelectValue } from '../inputs/CountrySelection'
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
+import CountrySelection from '../inputs/CountrySelection'
 import dynamic from 'next/dynamic'
+import Counter from '../inputs/Counter'
+import ImageUpload from '../inputs/ImageUpload'
+import { toast } from 'react-hot-toast'
 
 
 enum STEPS {
@@ -48,10 +51,14 @@ const UserRentModal = () => {
 
     const category = watch('category')
     const location = watch('location')
+    const guestCount = watch('guestCount')
+    const roomCount = watch('roomCount')
+    const bathroomCount = watch('bathroomCount')
 
-    const Map = useMemo(() => dynamic(() => import('../Map'),{
+
+    const Map = useMemo(() => dynamic(() => import('../Map'), {
         ssr: false
-    }), [location])
+    }), [])
 
     const setCustomValue = useCallback((name: string, value: any) => {
         setValue(name, value, {
@@ -69,15 +76,31 @@ const UserRentModal = () => {
         setStep((prev) => prev + 1)
     }
 
+    const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+        if (step !== STEPS.PRICE) {
+            onNext()
+            return
+        }
+        setIsLoading(true)
+        try {
+            console.log(data)
+            toast.success('Successfully created your listing!')
+            reset()
+            setStep(STEPS.CATEGORY)
+            userRentModal.close()
+        } catch (error) {
+            console.log(error)
+        }
+        setIsLoading(false)
+    }
+
     const actionLabel = useMemo(() => {
         if (step === STEPS.PRICE) return 'Create'
-
         return 'Next'
     }, [step])
 
     const secondaryActionActionLabel = useMemo(() => {
         if (step === STEPS.PRICE) return 'Cancel'
-
         return 'Back'
     }, [step])
 
@@ -105,15 +128,83 @@ const UserRentModal = () => {
         bodyContent = (
             <div>
                 <Heading title={'Where is your place located?'} subtitle={'Help guests find find you!'} />
-                <CountrySelection 
-                value={location}
-                onChange={(val)=>{
-                    setCustomValue('location', val)
-                }} /> 
+                <CountrySelection
+                    value={location}
+                    onChange={(val) => {
+                        setCustomValue('location', val)
+                    }} />
                 <Map center={location?.latlng} />
             </div>
         )
     }
+
+    if (step === STEPS.INFO) {
+        bodyContent = (
+            <div className='flex flex-col gap-8'>
+                <Heading
+                    title={'Share some details about your place'}
+                    subtitle={'What amenities do you have?'} />
+                <Counter
+                    value={guestCount}
+                    onChange={(value) => setCustomValue('guestCount', value)}
+                    title='Guests'
+                    subtitle='How many guests do you allow?' />
+                <hr />
+                <Counter
+                    value={roomCount}
+                    onChange={(value) => setCustomValue('roomCount', value)}
+                    title='Rooms'
+                    subtitle='How many rooms do you have?' />
+                <hr />
+                <Counter
+                    value={bathroomCount}
+                    onChange={(value) => setCustomValue('bathroomCount', value)}
+                    title='Bathrooms'
+                    subtitle='How many Bathrooms do you have?' />
+                <hr />
+            </div>
+        )
+    }
+
+    if (step === STEPS.IMAGE) {
+        bodyContent = (
+            <div className='flex flex-col gap-8'>
+                <Heading title={'Add a photos of your place'}
+                    subtitle={'Showcase guests what your place looks like!'} />
+                <ImageUpload onChange={() => { }} value={''} />
+            </div>
+        )
+    }
+
+    if (step === STEPS.DESCRIPTION) {
+        bodyContent = (
+            <div className='flex flex-col gap-8'>
+                <Heading title={'Describe your place'} subtitle={'Tell guests about your place'} />
+                <textarea
+                    className='w-full h-60 border border-neutral-200 rounded-lg p-4 focus:outline-none focus:border-primary-500'
+                    placeholder='Describe your place'
+                    {...register('description', {
+                        required: 'Description is required'
+                    })} />
+
+            </div>
+        )
+    }
+
+    if (step === STEPS.PRICE) {
+        bodyContent = (
+            <div className='flex flex-col gap-8'>
+                <Heading title={'How much do you want to charge?'} subtitle={'Set a price for your place'} />
+                <input
+                    className='w-full h-12 border border-neutral-200 rounded-lg p-4 focus:outline-none focus:border-primary-500'
+                    placeholder='Price'
+                    {...register('price', {
+                        required: 'Price is required'
+                    })} />
+            </div>
+        )
+    }
+
 
     return (
         <Modal
@@ -123,7 +214,7 @@ const UserRentModal = () => {
             body={bodyContent}
             isOpen={userRentModal.isOpen}
             onClose={userRentModal.close}
-            onSubmit={onNext}
+            onSubmit={handleSubmit(onSubmit)}
             secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
             secondaryActionLabel='Back'
         />
