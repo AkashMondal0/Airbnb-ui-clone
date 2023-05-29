@@ -4,9 +4,10 @@ import Logo from './Logo'
 import Search from './Search'
 import UserMenu from './UserMenu'
 import Categories from './Categories'
+
 const Navbar = () => {
     return (
-        <div className='fixed w-full bg-white z-10 shadow-sm 
+        <div className='sticky top-0 w-full bg-white z-10 
         transition
         duration-500
         ease-in-out
@@ -17,7 +18,7 @@ const Navbar = () => {
                     <div className='flex flex-row justify-between items-center md:gap-0 gap-3'>
                         <Logo />
                         <Search />
-                        <UserMenu/>
+                        <UserMenu currentUser={undefined}/>
                     </div>
                 </Container>
             </div>
