@@ -5,25 +5,7 @@ import { GiWindmill } from 'react-icons/gi'
 import { MdOutlineVilla } from 'react-icons/md'
 import CategoriesBox from '../CategoriesBox'
 import { useRouter } from 'next/router'
-
-export const categories = [
-    {
-        label: "Beach",
-        icon: TbBeach,
-        description: "Beach"
-    },
-    {
-        label: "Windmills",
-        icon: GiWindmill,
-        description: "Beach"
-    },
-    {
-        label: "Modern",
-        icon: MdOutlineVilla,
-        description: "Beach"
-    }
-
-]
+import { categories } from '../../data/airbnb'
 
 const Categories = () => {
     const router = useRouter()
@@ -37,13 +19,14 @@ const Categories = () => {
     const scrollToLeft = () => {
         scrollRef.current?.scrollBy({ left: -70, behavior: 'smooth' })
     }
-
+// console.log(cat)
 
     return (
         <Container>
             {/* left btn */}
-            <div className='flex justify-between w-[91vw] items-center'>
-                <div className='z-50 w-10 h-10 bg-white justify-center flex items-center hover:shadow-lg rounded-full border-neutral-400 border-[1px]'>
+           <div className='w-full justify-center flex'>
+           <div className='flex justify-between w-[90vw] items-center'>
+                <div className='w-10 h-10 bg-white justify-center flex items-center hover:shadow-lg rounded-full border-neutral-400 border-[1px]'>
                     <button onClick={scrollToLeft} className='rounded-full'>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -74,7 +57,7 @@ const Categories = () => {
                 </div>
                 
                 {/* right btn */}
-                <div className='w-10 h-10 z-50 bg-white justify-center flex items-center hover:shadow-lg rounded-full border-neutral-400 border-[1px]'>
+                <div className='w-10 h-10 bg-white justify-center flex items-center hover:shadow-lg rounded-full border-neutral-400 border-[1px]'>
                     <button onClick={scrollToRight} className='rounded-full'>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -84,6 +67,7 @@ const Categories = () => {
                     </button>
                 </div>
             </div>
+           </div>
         </Container>
     )
 }

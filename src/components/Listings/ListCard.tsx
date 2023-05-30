@@ -1,10 +1,9 @@
 import React, { useCallback, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import useCountries from '@/hooks/useCountries'
-import { format } from 'date-fns'
-import Image from 'next/image'
 import HeartButton from '../HeartButton'
 const ListingData = [] // import from database
+import { listings } from '@/data/airbnb'
 interface User {
     id: string
     name: string
@@ -94,7 +93,7 @@ const ListCard = ({
                     group-hover:scale-110
                     transition
                     duration-300
-                    ' src={'https://a0.muscache.com/im/pictures/miso/Hosting-787294559973104944/original/59551ea1-7feb-4a96-a9b3-1f2d2f15523a.jpeg?im_w=720'} alt='no image' />
+                    ' src={data.images} alt='no image' />
                         <div className='absolute top-3 right-3' >
                             <HeartButton
                                 id={data?.id}
@@ -105,14 +104,14 @@ const ListCard = ({
                     </>
                 </div>
                 <div className='font-semibold text-lg'>
-                    Europe Tour, Croatia
+                    {data.title}
                 </div>
                 <div className='text-sm text-gray-500'>
                     Beach
                 </div>
                 <div className='flex flex-row items-center gap-2'>
                     <div className='font-semibold'>
-                        $ 100 
+                        $ {data.price}
                     </div>
                     <span>night</span>
                 </div>

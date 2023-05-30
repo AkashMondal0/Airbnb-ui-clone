@@ -1,11 +1,10 @@
 import EmptyState from "@/components/EmptyState";
 import ListCard from "@/components/Listings/ListCard";
 import Container from "@/components/container/Container";
-
+import { listings } from '@/data/airbnb'
 export default function Home() {
 
   const currentUser = null
-  const listings = Array(100).fill(0)
 
   if (listings.length === 0) {
     return (

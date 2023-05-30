@@ -29,6 +29,7 @@ const CategoriesBox = ({
 
     return (
         <div onClick={handleClick} className={`flex flex-col items-center justify-center
+        mx-3
         duration-600
     cursor-pointer 
     transition
