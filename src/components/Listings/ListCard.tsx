@@ -86,7 +86,8 @@ const ListCard = ({
                 overflow-hidden
                 rounded-[20px]
                 '>
-                    <img className='
+                    <>
+                        <img className='
                     object-cover
                     w-full
                     h-full
@@ -94,12 +95,26 @@ const ListCard = ({
                     transition
                     duration-300
                     ' src={'https://a0.muscache.com/im/pictures/miso/Hosting-787294559973104944/original/59551ea1-7feb-4a96-a9b3-1f2d2f15523a.jpeg?im_w=720'} alt='no image' />
-                    <div className='absolute top-3 right-3' >
-                        <HeartButton
-                            id={data?.id}
-                            currentUser={currentUser}
-                        />
+                        <div className='absolute top-3 right-3' >
+                            <HeartButton
+                                id={data?.id}
+                                currentUser={currentUser}
+                            />
+
+                        </div>
+                    </>
+                </div>
+                <div className='font-semibold text-lg'>
+                    Europe Tour, Croatia
+                </div>
+                <div className='text-sm text-gray-500'>
+                    Beach
+                </div>
+                <div className='flex flex-row items-center gap-2'>
+                    <div className='font-semibold'>
+                        $ 100 
                     </div>
+                    <span>night</span>
                 </div>
             </div>
         </div>

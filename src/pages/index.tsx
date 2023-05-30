@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Container>
-        <div className="pt-25
+        <div className="pt-25 
       grid grid-cols-1
       sm:grid-cols-2
       md:grid-cols-3
@@ -26,7 +26,7 @@ export default function Home() {
       xl:grid-cols-5
       2xl:grid-cols-6
       gap-6
-      my-5
+      pt-5
       ">
           {listings.map((listing) => (
             <ListCard key={listing.title} currentUser={currentUser} data={listing} reservation={[]} onAction={function (id: string): void {
