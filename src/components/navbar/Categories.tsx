@@ -1,25 +1,23 @@
 import React from 'react'
 import Container from '../container/Container'
-import { TbBeach } from 'react-icons/tb'
-import { GiWindmill } from 'react-icons/gi'
-import { MdOutlineVilla } from 'react-icons/md'
 import CategoriesBox from '../CategoriesBox'
 import { useRouter } from 'next/router'
 import { categories } from '../../data/airbnb'
+import { useRef } from 'react'
 
 const Categories = () => {
     const router = useRouter()
     const selected = router.query.category as string
-    const scrollRef = React.useRef(null)
+    const scrollRef = useRef<HTMLDivElement>(null);
+
 
     const scrollToRight = () => {
-        scrollRef.current?.scrollBy({ left: 70, behavior: 'smooth' })
+        scrollRef?.current?.scrollBy({ left: 70, behavior: 'smooth' })
     }
 
     const scrollToLeft = () => {
-        scrollRef.current?.scrollBy({ left: -70, behavior: 'smooth' })
+        scrollRef?.current?.scrollBy({ left: -70, behavior: 'smooth' })
     }
-// console.log(cat)
 
     return (
         <Container>

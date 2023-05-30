@@ -95,9 +95,8 @@ const ListCard = ({
                     duration-300
                     ' src={data.images} alt='no image' />
                         <div className='absolute top-3 right-3' >
-                            <HeartButton
-                                id={data?.id}
-                                currentUser={currentUser}
+                            <HeartButton listingId={''} currentUser={null}                                // id={data?.id}
+                                // currentUser={currentUser}
                             />
 
                         </div>

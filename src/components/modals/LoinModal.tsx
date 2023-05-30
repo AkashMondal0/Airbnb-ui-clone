@@ -83,7 +83,7 @@ const LoginModal = () => {
             icon={AiFillGithub}
             onClick={() => { }} />
         <div className='text-neutral-500 text-center font-light flex justify-center'>
-            Don't have an account?{' '}<div className='px-2 cursor-pointer hover:underline'
+            Don t have an account?{' '}<div className='px-2 cursor-pointer hover:underline'
                 onClick={toggleModal}>Sign Up</div>
         </div>
 

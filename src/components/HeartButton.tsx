@@ -2,9 +2,10 @@ import React from 'react'
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 interface HeartButtonProps {
     listingId: string
-    currentUser?: null
+    currentUser: null
 
 }
+
 const HeartButton = ({
     listingId,
     currentUser

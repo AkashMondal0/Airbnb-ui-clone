@@ -36,7 +36,7 @@ const Input = ({
                     ${errors[id] ? 'border-red-500' : 'border-neutral-200'}
                     ${errors[id] ? 'focus:border-rose-500' : 'focus:border-black'}
                   `}
-                {...register(id, { required })}
+                // {...register(id, { required })}
                 placeholder=' '
             />
             <label htmlFor={id}
