@@ -1,12 +1,11 @@
 'use client'
 import React from 'react'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 const Logo = () => {
     const router = useRouter()
   return (
-  <Image 
+  <img 
     src='/assets/images/Airbnb_Logo.png'
     alt='logo'
     width={100}

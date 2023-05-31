@@ -1,10 +1,9 @@
 'use client'
 import React from 'react'
-import Image from 'next/image'
 
 const Avatar = () => {
   return (
-    <Image 
+    <img 
         src="/assets/images/avatar.jpg"
         alt="Picture of the author"
         width={30}
