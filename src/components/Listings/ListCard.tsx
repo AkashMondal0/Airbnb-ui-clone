@@ -66,10 +66,16 @@ const ListCard = ({
         // return `${format(start, 'PP')} - ${format(end, 'PP')}`
     }, [reservation])
 
+    const pushRoomPage = useCallback((id: string) => {
+        router.push({
+            pathname: '/room',
+            query: { id }
+        })
+    }, [router])
 
     return (
         <div
-            // onClick={() => router.push(`/listings/${data?.id}`)}
+            onClick={() => pushRoomPage(data.id)}
             className='
         col-span-1
         flex
@@ -96,7 +102,7 @@ const ListCard = ({
                     ' src={data.images} alt='no image' />
                         <div className='absolute top-3 right-3' >
                             <HeartButton listingId={''} currentUser={null}                                // id={data?.id}
-                                // currentUser={currentUser}
+                            // currentUser={currentUser}
                             />
 
                         </div>

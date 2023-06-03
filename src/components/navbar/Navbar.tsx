@@ -4,8 +4,12 @@ import Logo from './Logo'
 import Search from './Search'
 import UserMenu from './UserMenu'
 import Categories from './Categories'
+import { useRouter } from 'next/router'
+
 
 const Navbar = () => {
+    const router = useRouter()
+    
     return (
         <div className='sticky top-0 w-full bg-white z-10 
         transition
@@ -23,7 +27,7 @@ const Navbar = () => {
                 </Container>
             </div>
             <hr/>
-            <Categories/>
+            {router.asPath == "/" &&<Categories/>}
         </div>
     )
 }

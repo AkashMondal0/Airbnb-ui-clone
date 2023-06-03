@@ -16,7 +16,7 @@ import { IoDiamond } from 'react-icons/io5';
 
 export const listings = [
     {
-        "id": "123456",
+        "id": "123456erfer",
         "title": "Ponta Delgada, Portugal",
         "description": "Welcome to our cozy apartment located in the heart of the city. It's perfect for couples or solo travelers looking for a comfortable stay.",
         "price": 80,
@@ -32,14 +32,14 @@ export const listings = [
             "https://a0.muscache.com/im/pictures/miso/Hosting-5264493/original/10d2c21f-84c2-46c5-b20b-b51d1c2c971a.jpeg?im_w=720"
         ],
         "host": {
-            "id": "987654",
+            "id": "98erveev7654",
             "name": "John Doe",
             "avatar": "https://example.com/avatar.jpg",
             "superhost": true
         }
     },
     {
-        "id": "789012",
+        "id": "789vevevev012",
         "title": "Pelkosenniemi, Finland",
         "description": "Enjoy a relaxing vacation in our spacious beach house. With stunning ocean views and direct beach access, it's the perfect getaway.",
         "price": 150,
@@ -62,7 +62,7 @@ export const listings = [
         }
     },
     {
-        "id": "789012",
+        "id": "78veveveve9012",
         "title": "Abiansemal, Indonesia",
         "description": "Enjoy a relaxing vacation in our spacious beach house. With stunning ocean views and direct beach access, it's the perfect getaway.",
         "price": 150,
@@ -85,7 +85,7 @@ export const listings = [
         }
     },
     {
-        "id": "789012",
+        "id": "789veveveveeevev012",
         "title": "Hua Hin District, Thailand",
         "description": "Enjoy a relaxing vacation in our spacious beach house. With stunning ocean views and direct beach access, it's the perfect getaway.",
         "price": 150,
@@ -101,14 +101,14 @@ export const listings = [
             "https://a0.muscache.com/im/pictures/448bee34-7416-4262-a02f-b39e29d7ce4f.jpg?im_w=720"
         ],
         "host": {
-            "id": "543210",
+            "id": "54xx3210",
             "name": "Jane Smith",
             "avatar": "https://example.com/avatar2.jpg",
             "superhost": false
         }
     },
     {
-        "id": "789012",
+        "id": "789,dnndvm012",
         "title": "Murbad, India",
         "description": "Enjoy a relaxing vacation in our spacious beach house. With stunning ocean views and direct beach access, it's the perfect getaway.",
         "price": 150,
@@ -131,7 +131,7 @@ export const listings = [
         }
     },
     {
-        "id": "789012",
+        "id": "78mdvdmmvm9012",
         "title": "Thung Samo, Thailand        ",
         "description": "Enjoy a relaxing vacation in our spacious beach house. With stunning ocean views and direct beach access, it's the perfect getaway.",
         "price": 150,
@@ -154,7 +154,7 @@ export const listings = [
         }
     },
     {
-        "id": "789012",
+        "id": "789mnnmnmnm012",
         "title": "Chittorgarh, India",
         "description": "Enjoy a relaxing vacation in our spacious beach house. With stunning ocean views and direct beach access, it's the perfect getaway.",
         "price": 150,
@@ -177,7 +177,7 @@ export const listings = [
         }
     },
     {
-        "id": "789012",
+        "id": "7890poopijkjkjk12",
         "title": "Kecamatan Kuta Selatan, Indonesia",
         "description": "Enjoy a relaxing vacation in our spacious beach house. With stunning ocean views and direct beach access, it's the perfect getaway.",
         "price": 150,
@@ -199,7 +199,7 @@ export const listings = [
         }
     },
     {
-        "id": "789012",
+        "id": "78bbbnghghgh9012",
         "title": "Aewol-eup, Jeju-si, South Korea",
         "description": "Enjoy a relaxing vacation in our spacious beach house. With stunning ocean views and direct beach access, it's the perfect getaway.",
         "price": 150,
@@ -222,7 +222,7 @@ export const listings = [
         }
     },
     {
-        "id": "789012",
+        "id": "7890bnnnbhdhjd12",
         "title": "Puerto Galera, Philippines",
         "description": "Enjoy a relaxing vacation in our spacious beach house. With stunning ocean views and direct beach access, it's the perfect getaway.",
         "price": 150,
@@ -245,7 +245,7 @@ export const listings = [
         }
     },
     {
-        "id": "789012",
+        "id": "789wgfgfwgfwegf012",
         "title": "Don Tako, Thailand",
         "description": "Enjoy a relaxing vacation in our spacious beach house. With stunning ocean views and direct beach access, it's the perfect getaway.",
         "price": 150,
@@ -268,7 +268,7 @@ export const listings = [
         }
     },
     {
-        "id": "789012",
+        "id": "789bnbbbnbn012",
         "title": "Seongsan-eup, Seogwipo, South Korea",
         "description": "Enjoy a relaxing vacation in our spacious beach house. With stunning ocean views and direct beach access, it's the perfect getaway.",
         "price": 150,
