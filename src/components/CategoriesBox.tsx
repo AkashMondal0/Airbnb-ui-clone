@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react'
 import { IconType } from 'react-icons'
 import { useRouter } from 'next/router'
-import qs from 'query-string'
 
 interface CategoriesBoxProps {
     label: string

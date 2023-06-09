@@ -4,6 +4,7 @@ import { listings } from '@/data/airbnb'
 import Container from '@/components/container/Container'
 import RoomHead from '@/components/room/RoomHead'
 import ListingInfo from '@/components/room/ListingInfo'
+import ListingDataReservations from '@/components/room/ListingDataReservations'
 
 
 const Room = () => {
@@ -37,6 +38,9 @@ const Room = () => {
               price={null} cancellation={null}
               guestCount={null}
             />
+            <div className='order-first mb-10 md:order-last md:col-span-3'>
+              <ListingDataReservations price={100000} />
+            </div>
           </div>
         </div>
       </div>

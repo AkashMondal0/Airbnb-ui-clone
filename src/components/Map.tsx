@@ -32,7 +32,7 @@ const Map = ({
                 />
                 {center && (<Marker position={center as L.LatLngExpression}>
                     <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
+                        A pretty CSS3 popup. <br /> sky inc.
                     </Popup>
                 </Marker>)}
             </MapContainer>
